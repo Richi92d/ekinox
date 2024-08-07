@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="film-gallery">
+        <div class="film-item" *ngFor="let film of featuredFilms">
+            <img [src]="film.posterUrl" alt="{{ film.title }}">
+            <div class="film-details">
+                <span class="film-price">{{ film.price | currency:'EUR':'symbol' }}</span>
+                <button class="buy-button" (click)="addToCart(film)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <app-film-cart [cart]="cart" (emitRemoveCart)="onCartUpdated($event)"></app-film-cart>
+</div>

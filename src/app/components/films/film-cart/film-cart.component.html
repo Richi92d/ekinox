@@ -1,0 +1,25 @@
+<div class="cart">
+    <div class="cart-toggle">
+        <h2>Votre Panier</h2>
+    </div>
+    <ul>
+        <li *ngFor="let item of cart">
+            <div class="cart-item-content">
+                <span class="cart-item-title">{{ item.title }}</span>
+                <span class="cart-item-price">{{ item.price | currency:'EUR':'symbol' }}</span>
+            </div>
+            <button mat-icon-button class="icon-style" (click)="removeFromCart(item)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </li>
+    </ul>
+    <div class="cart-discount">
+        <span>Réduction appliquée:</span>
+        <span class="cart-pourcentage">{{ getDiscountPercentage() }}%</span>
+    </div>
+    <hr>
+    <div class="cart-total">
+        <span>Total:</span>
+        <span>{{ getTotal() | currency:'EUR':'symbol' }}</span>
+    </div>
+</div>

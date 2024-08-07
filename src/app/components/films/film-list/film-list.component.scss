@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    justify-content: space-between; // Aligne les enfants du conteneur sur les côtés
+    align-items: flex-start; // Aligne les éléments au début du conteneur (haut)
+    gap: 20px; // Espacement entre la galerie et le panier
+    padding: 20px;
+
+    .film-gallery {
+        flex: 1; // Permet à la galerie de films de prendre tout l'espace disponible sauf celui réservé au panier
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: calc(100% - 40rem); // Limite la largeur maximale pour tenir compte du panier à droite
+
+        .film-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            width: calc(33.333% - 20px); // Trois éléments par ligne avec un espace de 20px entre eux
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; // Espacement entre les lignes
+
+            img {
+                width: 100%;
+                height: auto;
+                border-bottom: 2px solid #dee2e6;
+            }
+
+            .film-details {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+
+                .film-price {
+                    font-size: 1.2em;
+                    color: #28a745;
+                }
+
+                .buy-button {
+                    background-color: #007bff;
+                    border: none;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: #0056b3;
+                    }
+                }
+            }
+        }
+    }
+
+    app-film-cart {
+        width: 100%;
+        max-width: 400px; // Limite la largeur maximale du panier
+        padding: 15px;
+    }
+}
