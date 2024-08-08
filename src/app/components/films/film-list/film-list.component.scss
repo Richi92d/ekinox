@@ -1,39 +1,39 @@
 .container {
     display: flex;
-    justify-content: space-between; // Aligne les enfants du conteneur sur les côtés
-    align-items: flex-start; // Aligne les éléments au début du conteneur (haut)
-    gap: 20px; // Espacement entre la galerie et le panier
-    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem;
 
     .film-gallery {
-        flex: 1; // Permet à la galerie de films de prendre tout l'espace disponible sauf celui réservé au panier
+        flex: 1;
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
-        max-width: calc(100% - 40rem); // Limite la largeur maximale pour tenir compte du panier à droite
+        gap: 1.25rem;
+        max-width: calc(100% - 25rem); // Ajuste la largeur en fonction de la largeur du panier
 
         .film-item {
             background: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             overflow: hidden;
-            width: calc(33.333% - 20px); // Trois éléments par ligne avec un espace de 20px entre eux
+            width: calc(33.333% - 1.25rem);
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px; // Espacement entre les lignes
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.25rem;
 
             img {
                 width: 100%;
                 height: auto;
-                border-bottom: 2px solid #dee2e6;
+                border-bottom: 0.125rem solid #dee2e6;
             }
 
             .film-details {
                 display: flex;
                 justify-content: space-between;
-                padding: 10px;
+                padding: 0.625rem;
 
                 .film-price {
-                    font-size: 1.2em;
+                    font-size: 1.2rem;
                     color: #28a745;
                 }
 
@@ -41,8 +41,8 @@
                     background-color: #007bff;
                     border: none;
                     color: white;
-                    padding: 10px;
-                    border-radius: 5px;
+                    padding: 0.625rem;
+                    border-radius: 0.3125rem;
                     cursor: pointer;
                     transition: background-color 0.3s;
 
@@ -56,7 +56,7 @@
 
     app-film-cart {
         width: 100%;
-        max-width: 400px; // Limite la largeur maximale du panier
-        padding: 15px;
+        max-width: 25rem;
+        padding: 0.9375rem;
     }
 }
